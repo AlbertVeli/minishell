@@ -13,13 +13,13 @@ $(EXE): $(OBJS)
 	strip $@
 
 suid: $(EXE)
-	@echo "Setting changing owner to root and setting suid bit (run with sudo)"
+	@echo "Changing owner to root and setting suid bit (run with sudo)"
 	chown root:root $<
 	chmod 4755 $<
 
 unsuid: $(EXE)
-	@echo "Removing suid bit"
-	chown $(USER):$(USER) $<
+	@echo "Removing suid bit (run with sudo)"
+	chown $(SUDO_UID):$(SUDO_GID) $<
 	chmod 755 $<
 
 clean:
