@@ -31,10 +31,9 @@ cat: /etc/shadow: Permission denied
 
 ### SUID Functionality
 To enable SUID functionality:
-1. Set the owner of the executable to `root:root` and set the SUID bit:
-   ```bash
-   sudo make suid
-   ```
+```bash
+sudo make suid
+```
 
 ### Example of SUID Usage
 ```bash
